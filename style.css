@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    /* position: relative; */
+}
+
+.nav{
+    height: 100px;             /*<---------👂yha height ap vh m bhi de skte ho pr mene yha ak karn se px m di h  --> taki m calc() use kru*/
+    width: 100%;
+    /* background-color: red; */
+    display: flex;                         /*nav ke do children ak hi line(row) m agye h*/
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 4.2vw;
+}
+.nav-part2{
+    display: flex;
+    /* 👂 space dena pdega tbhi to space between vali value chale gi   ---> width bhi use kr skte h aur gap bhi */
+    gap: 4vw;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: blue; */
+}
+.nav h2{
+    font-size: 1.6vw;
+    font-weight: 690;
+}
+.nav h4{
+    font-size: 1.1vw;
+}
+.nav button{
+    font-size: 1vw;
+    font-weight: 300;
+    padding: 0.7vw 1.4vw;
+    background-color: #FF735C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.nav i{
+    font-size: 1.4vw;
+    font-weight: 600;
+    display: none;                        /*icon dikhao hi mt*/
+}
+/* 👁️dekho vw use krne ke bad m bhi, jb aap isko responsive m dekho ge to iski esi ki tesi hui bdi hui dikhai pde gi
+      👂 to hmko use krna pda ga kya????
+        ANS: media query 
+--> to chalo use krte h*/
+
+/*BAD M CHIJ ADD KRI*/
+.content{
+    width: 100%;
+    /*height: 80%;*/            /*heigth 80% di to niche kgh chuti hui dikhai de rhi apko   -> to ydi concept smzo 
+    to ap n apne main div ko h=100% di thi, nav ko 100px 👁️to dekhe to 100% -100px to kitna bche ga (VO TO NHI 
+    PTA)---> to bchi lgh pta chalegi kya <=========to bchi jgh pta lgane ke liye*/
+    /* height: 96%; */                                    /*   <----------pr ise to scroll bar bd jayega*/
+    /* 👂ese bchne ke liye hm krege kyav           <🤗 ak bhut hi pyara sa fn h calc()  */
+    height: calc(100% - 100px);    /*Ab Koi Scroll nhi dikhega puri space cover ho ajyegi*/
+    display: flex;
+    position: relative;
+}
+.left{
+    height: 100%;
+    width: 58%;
+    /* background-color: crimson; */
+    padding: 7vh 4.2vw;
+}
+.right{
+    height: 100%;
+    width: 42%;
+}
+.left h1{
+    font-size: 4.2vw;
+    line-height: 4vw;
+}
+.left h1 span{
+    color: #FF735C;
+}
+.left p{
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #666;
+    width: 82%;
+    margin-top: 1.5vw;
+    margin-bottom: 3vw;
+}
+.content button{                                        /* 👂 ye btn ko khege hm CTA Call Through Action*/
+    font-size: 1.2vw;
+    font-weight: 600;
+    padding: 1vw 1.8vw;
+    background-color: #FF735C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+@media (max-width: 600px){
+    .nav{
+        padding: 0 5vw;
+        height: 50px;
+    }
+    .nav h2{
+        font-size: 5.1vw;
+    }
+    /* ab jo 3-4 line likhege vo bhuut gnda effect dene vali h  PR PR👂 hm yha ak megic krne vale h*/
+    .nav h4{
+        font-size: 4vw;       /*jitni bhi kosis kr lo yh icon ache nhi dikhne vale h  <------but magic h na*/
+        display:none;           /*<---------------------------------👁️magic     line no. 46, 65, 68*/
+    }
+    .nav i{                        /*<------------👂65, 68 ka magic tb hoga jb ak particular point hit hoga*/
+        display:block;    /*icon dikhao*/
+        font-size: 4.5vw;    /*aur uska size bda do*/      
+    }
+
+    /*BAD M CHIJ ADD KRI*/
+    .nav button{
+        display: none;
+    }
+    .content{
+        height: calc(100% - 50px);         /*-50 px kyo  ---> kyoki ap ne reponsive m nav ko 50px height si h*/
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        height: 44%;
+        padding: 4.5vw 6vw;
+    }
+    .right{
+        width: 100%;
+        height: 56%;
+    }
+    .left h1{
+        font-size: 10vw;
+        line-height: 11vw;
+    }
+    .left p{
+        font-size: 3vw;
+        width: 90%;
+        margin-top: 5vw;
+        margin-bottom: 6vw;
+    }
+    .content button{
+        padding: 3vw 6vw;
+        font-size: 3.5vw;
+        border-radius: 3px;
+    }
+}
